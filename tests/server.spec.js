@@ -38,12 +38,12 @@ describe('server/app.js', function() {
     });
   });
 
-  it('page has subtitle', (done) => {
+  it('page has correct subtitle', (done) => {
   chai.request(server)
     .get('/')
     .end((err, res) => {
       expect(err).not.exist;
-      expect(JSON.stringify(res.text)).to.contain("You're serving up the public folder, but do your tests pass?");
+      expect(JSON.stringify(res.text)).to.contain("intentional break");
       done();
     });
   });
